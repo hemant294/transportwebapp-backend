@@ -7,12 +7,13 @@ const Contact = require('../models/Contact');
 // @access  Public
 exports.submitContact = async (req, res) => {
   try {
-    const { name, email, message } = req.body;
+    const { name, email, phone, message } = req.body;
 
     // Create contact query
     const contact = await Contact.create({
       name,
       email,
+      phone,
       message
     });
 
